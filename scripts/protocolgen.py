@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import requests
 import yaml
 import urllib.parse
@@ -17,6 +18,12 @@ REPOS = [
         "project": "wayland/wayland-protocols",
         "path": "stable",
         "base_url": "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/raw/main/stable"
+    },
+    {
+        "section": "staging",
+        "project": "wayland/wayland-protocols",
+        "path": "staging",
+        "base_url": "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/raw/main/staging"
     }
     # {
     #     "section": "unstable",
@@ -63,12 +70,12 @@ for protocol in protocols:
     print(f"{protocol['name']}: {protocol['input']} -> {protocol['output']}")
     response = requests.get(protocol['input'])
     response.raise_for_status()
+    output_dir = 'protocols/' + '/'.join(protocol['output'].split('/')[:-1])
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
     with open('protocols/' + protocol['output'], 'wb') as f:
         output_path = protocol['output']
         output_dir = 'protocols/' + '/'.join(output_path.split('/')[:-1])
-        if output_dir:
-            import os
-            os.makedirs(output_dir, exist_ok=True)
         f.write(response.content)
         print(f"downloaded {protocol['name']} to {output_path}")
     

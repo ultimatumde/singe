@@ -12,5 +12,5 @@ archify:
     # can we ignore the controversies and just say vaxry made some pretty good stuff
     yay -S hyprwayland-scanner-git wayland-git
 
-glue:
-    
+scan:
+    python3 scripts/protocolgen.py

@@ -1,0 +1,21 @@
+arch:
+  - meson
+  - hyprwayland-scanner-git
+  - wayland-git
+  - python
+  - gcc
+
+nix:
+  - meson
+  - python3
+  - hyprwayland-scanner
+  - wayland
+  - gcc
+
+debian:
+  - meson
+  - python
+  - hyprwayland-scanner
+  - wayland-protocols
+  - libwayland-dev
+  - gcc

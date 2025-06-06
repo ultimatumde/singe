@@ -1,0 +1,4 @@
+[submodule "buildcommons"]
+    path = buildcommons
+    url = https://github.com/ultimatumde/buildcommons.git
+    branch = main

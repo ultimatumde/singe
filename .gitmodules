@@ -2,3 +2,8 @@
     path = buildcommons
     url = https://github.com/ultimatumde/buildcommons.git
     branch = main
+
+[submodule "uproto"]
+    path = uproto
+    url = https://github.com/ultimatumde/uproto.git
+    branch = main

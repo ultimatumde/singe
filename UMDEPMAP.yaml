@@ -4,6 +4,9 @@ arch:
   - wayland-git
   - python
   - gcc
+  - libxkbcommon-git
+  - python-requests
+  - cmake
 
 nix:
   - meson
@@ -11,6 +14,9 @@ nix:
   - hyprwayland-scanner
   - wayland
   - gcc
+  - libxkbcommon
+  - python312Packages.requests
+  - cmake
 
 debian:
   - meson
@@ -19,3 +25,6 @@ debian:
   - wayland-protocols
   - libwayland-dev
   - gcc
+  - libxkbcommon-dev
+  - python3-requests
+  - cmake

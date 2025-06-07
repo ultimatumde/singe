@@ -24,14 +24,13 @@ REPOS = [
         "project": "wayland/wayland-protocols",
         "path": "staging",
         "base_url": "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/raw/main/staging"
-    }
-    # {
-    #     "section": "unstable",
-    #     "project": "wayland/wayland-protocols",
-    #     "path": "unstable",
-    #     "base_url": "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/raw/main/unstable"
-    # }
-    # uncomment above object if you want to include unstable
+    },
+    {
+        "section": "unstable",
+        "project": "wayland/wayland-protocols",
+        "path": "unstable",
+        "base_url": "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/raw/main/unstable"
+     }
 ]
 
 def list_tree(project, tree_path):
